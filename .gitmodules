@@ -1,3 +1,6 @@
 [submodule "api"]
 	path = api
 	url = https://github.com/estimpson/jnmg
+[submodule "client"]
+	path = client
+	url = https://github.com/estimpson/jnmgb-wasm
