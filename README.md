@@ -32,6 +32,10 @@ Endpoint | Header | Body | Response
 ../auth/register | JWT token (admin) | name: string, email: string (unique), password: string (complexity) | newUser (JSON) or error
 ../auth/setPassword | JWT token (admin) | email: string, password: string (complexity) | success or error
 
+## Testing
+
+Tests are defined and run using Jest.  Tests against services are the base unit level tests, and every service has tests that thoroughly examine the service's methods.  Additionally, endpoints are tested for every module for both REST and GraphQL.
+
 ## Next steps
 1. Create Nest application
     1. Add support for Mongoose
