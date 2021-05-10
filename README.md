@@ -21,6 +21,17 @@ MongoDB's Atlas cloud service provides free hosting for the data repository suit
 
 TDD, or test driven development, is a development methodology wherein you first develop tests for your application using a testing framework such as Jest, *before* impelementing the product code.  Readme driven development is a further refinement of this methodology, where you first describe a feature of the application in a readme file prior to writing your tests.  Thus the readme file for this project serves the purpose of providing basic documentation of what this project does and what this project will eventually do as it is being further developed and refined.
 
+## API
+
+Authentication and authorization to the API are provided by REST endpoints for creating a login, changing a password, and verifying credentials.  The rest of the API is implemented as GraphQL queries and mutations, secured by a JWT token provided by a successful login.
+
+The following REST endpoints support user authentication:
+Endpoint | Header | Body | Response
+------------ | ------------- | ------------- | -------------
+../auth/login | N/A | email: string, password: string | JWT token or error
+../auth/register | JWT token (admin) | name: string, email: string (unique), password: string (complexity) | newUser (JSON) or error
+../auth/setPassword | JWT token (admin) | email: string, password: string (complexity) | success or error
+
 ## Next steps
 1. Create Nest application
     1. Add support for Mongoose
